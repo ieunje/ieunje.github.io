@@ -185,3 +185,214 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+// 8번 이미지 클릭 이벤트
+document.getElementById('image40').addEventListener('click', function() {
+    // 텍스트를 화면에 표시
+    document.getElementById('fullScreenText').style.display = 'flex';
+});
+
+// 화면을 클릭하면 텍스트 숨기기
+document.getElementById('fullScreenText').addEventListener('click', function() {
+    // 텍스트를 숨김
+    this.style.display = 'none';
+});
+/////////////////////////////////////////////////////////////////////////////////
+
+document.getElementById('image71').addEventListener('click', function() {
+    // 텍스트를 화면에 표시
+    const textElement = document.getElementById('f');
+    textElement.style.display = 'block'; // 텍스트 표시
+    
+    // 텍스트를 여러 번 반복하여 길게 만듦
+    const text = textElement.querySelector('p').innerHTML;
+    textElement.querySelector('p').innerHTML = text + text + text + text + text; // 텍스트 길이를 늘림
+
+    textElement.style.animation = 'scrollText 30s linear forwards'; // 애니메이션 한 번만 실행
+});
+
+document.getElementById('f').addEventListener('click', function() {
+    // 텍스트를 숨김
+    this.style.display = 'none'; // 텍스트 숨기기
+    this.style.animation = 'none'; // 애니메이션 중지
+});
+
+    /////////////////////////////////////////////////////////////////////////////////
+
+document.getElementById('image98').addEventListener('click', function() {
+    // 텍스트를 화면에 표시
+    const textElement = document.getElementById('s');
+    textElement.style.display = 'block'; // 텍스트 표시
+    textElement.style.animation = 'slideUp 10s linear infinite'; // 애니메이션 시작
+});
+
+document.getElementById('s').addEventListener('click', function() {
+    // 텍스트를 숨김
+    this.style.display = 'none'; // 텍스트 숨기기
+    this.style.animation = 'none'; // 애니메이션 중지
+});
+
+/////////////////////////////////////////////////////////////////////////////////
+
+document.getElementById('image30').addEventListener('click', function() {
+    // 텍스트를 화면에 표시
+    const textElement = document.getElementById('i');
+    textElement.style.display = 'block'; // 텍스트 표시
+    // 텍스트가 나타나는 애니메이션 시작
+    textElement.style.animation = 'fadeIn 5s forwards'; // 애니메이션 시작
+});
+
+document.getElementById('i').addEventListener('click', function() {
+    // 텍스트를 숨김
+    this.style.display = 'none'; // 텍스트 숨기기
+    this.style.animation = 'none'; // 애니메이션 중지
+});
+
+/////////////////////////////////////////////////////////////////////////////////
+document.getElementById('image11').addEventListener('click', function() {
+    // 블루스크린 이미지 표시
+    const blueScreen = document.getElementById('blueScreen');
+    blueScreen.style.display = 'flex'; // 블루스크린 표시
+});
+
+document.getElementById('blueScreen').addEventListener('click', function() {
+    // 블루스크린 숨기기
+    this.style.display = 'none';
+});
+
+#fullScreenText {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* 어두운 배경 */
+    color: white; /* 텍스트 색상을 흰색으로 변경 */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 5em; /* 텍스트 크기 조정 */
+    padding: 20px;
+}
+
+#f {
+    position: fixed;
+    top: 50%; /* 화면 중앙에 수직 정렬 */
+    left: 100%; /* 화면 오른쪽 밖에서 시작 */
+    width: auto; /* 텍스트 크기에 맞게 설정 */
+    font-size: 2em; /* 글자 크기 설정 */
+    color: white; /* 글자 색상 */
+    background-color: transparent; /* 배경색을 투명하게 설정 */
+    display: none; /* 처음에는 보이지 않도록 */
+    padding: 10px;
+    white-space: nowrap; /* 텍스트가 한 줄로 보이도록 */
+    overflow: hidden;
+    text-align: center;
+    transform: translateY(-50%); /* 세로 중앙 정렬 */
+    animation: none; /* 초기 애니메이션 없음 */
+}
+
+@keyframes scrollText {
+    0% {
+        left: 100%; /* 화면 오른쪽 밖에서 시작 */
+    }
+    100% {
+        left: -100%; /* 화면 왼쪽 밖으로 완전히 지나갈 때 */
+    }
+}
+
+#s {
+    position: fixed;
+    bottom: 0; /* 화면 하단에서 시작 */
+    left: 50%; /* 화면 중앙 가로 정렬 */
+    width: 100%;
+    font-size: 2em; /* 글자 크기 설정 */
+    color: white; /* 글자 색상 */
+    background-color: transparent; /* 배경색을 투명하게 설정 */
+    display: none; /* 처음에는 보이지 않도록 */
+    padding: 10px;
+    white-space: nowrap; /* 텍스트가 한 줄로 보이도록 */
+    overflow: hidden;
+    text-align: center;
+    transform: translateX(-50%); /* 세로 중앙 정렬 */
+    animation: none; /* 초기 애니메이션 없음 */
+}
+
+@keyframes slideUp {
+    0% {
+        bottom: -100%; /* 화면 밖 하단에서 시작 */
+    }
+    100% {
+        bottom: 100%; /* 화면 위로 이동 */
+    }
+}
+
+#i {
+    position: fixed;
+    bottom: 0; /* 화면 하단에서 시작 */
+    left: 50%; /* 화면 중앙 가로 정렬 */
+    width: 100%;
+    font-size: 2em; /* 글자 크기 설정 */
+    color: white; /* 글자 색상 */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)); /* 화면 아래가 가장 어두운 그라데이션 배경 */
+    display: none; /* 처음에는 보이지 않도록 */
+    padding: 10px;
+    white-space: nowrap; /* 텍스트가 한 줄로 보이도록 */
+    overflow: hidden;
+    text-align: center;
+    transform: translateX(-50%); /* 세로 중앙 정렬 */
+    opacity: 0; /* 처음에는 투명하게 설정 */
+    animation: fadeIn 5s forwards; /* 서서히 나타나는 애니메이션 */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.5); /* 빛나는 효과 */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* 처음에는 투명 */
+    }
+    100% {
+        opacity: 1; /* 서서히 불투명해져서 보임 */
+    }
+}
+
+#blueScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: blue; /* 블루스크린 기본 배경 */
+    color: white; /* 텍스트가 필요하면 하얀색 */
+    display: none; /* 기본적으로 숨김 */
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    flex-direction: column; /* 문장을 세로로 정렬 */
+    padding: 20px; /* 블루스크린 내부 여백 */
+    text-align: center; /* 문장 중앙 정렬 */
+}
+
+#blueScreen p {
+    margin: 20px 0; /* 각 문단 사이에 여백 추가 */
+}
+
+
+
+
+img {
+    width: 100px;
+    transition: transform 0.3s ease, box-shadow 0.5s ease;
+}
+
+img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    background-color: #dfdfdf;
+    transition: background-color 0.5s ease;
+    font-family: Arial, sans-serif;
+}
